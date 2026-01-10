@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="/images/logo/logo.jpg">
+    <meta name="description"
+        content="হিবিস্কাস হারবাল টি - প্রাকৃতিক ও স্বাস্থ্যকর চায়ের জন্য আপনার নির্ভরযোগ্য পছন্দ">
+    <title>Hibiscus Herbal Tea - স্বাস্থ্যকর জীবনের সাথী</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: linear-gradient(135deg, #2d5016 0%, #48a14d 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #d4f1d4 !important;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section - Updated for Mobile Responsive */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(26, 58, 15, 0.85) 0%, rgba(45, 80, 22, 0.85) 50%, rgba(58, 101, 32, 0.85) 100%),
+                url('https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=1920&q=80') no-repeat center center;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            flex: 1;
+            color: white;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffd700, #ff6b6b);
+            color: #1a3a0f;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: tagPulse 2s infinite alternate;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        @keyframes tagPulse {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(45deg, #ffd700, #ffffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffd700;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ffd700, #ff6b6b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn,
+        .secondary-btn {
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ffd700);
+            color: #1a3a0f;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .secondary-btn:hover {
+            border-color: #ffd700;
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Product Showcase */
+        .product-showcase {
+            flex: 1;
+            position: relative;
+            animation: fadeInRight 1s ease-out;
+        }
+
+        .showcase-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            perspective: 1500px;
+        }
+
+        .product-card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .product-card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .product-front,
+        .product-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .product-front {
+            background: linear-gradient(135deg, #2d5016, #48a14d);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .product-back {
+            background: linear-gradient(135deg, #1a3a0f, #2d5016);
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            color: white;
+        }
+
+        .product-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 30px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .product-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+        }
+
+        .flip-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 auto;
+        }
+
+        .flip-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            border-color: #ffd700;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits-list li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .benefits-list li i {
+            color: #ffd700;
+        }
+
+        .showcase-controls {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* Benefits Section - NEW */
+        .benefits-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8f0 100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #48a14d, #ffd700);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #48a14d, #6dc46f);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .benefit-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d5016;
+            margin-bottom: 15px;
+        }
+
+        .benefit-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .about-section {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d5016;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .about-content {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s;
+        }
+
+        .about-content.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feedback-carousel img {
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Packages Section */
+        .packages-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e9 100%);
+        }
+
+        .package-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            margin: 1rem;
+            position: relative;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .package-card.popular {
+            border: 3px solid #48a14d;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #ff6b6b;
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .package-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2d5016;
+            margin: 1rem 0;
+        }
+
+        .package-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .order-btn {
+            background: #48a14d;
+            color: #fff;
+            padding: 0.8rem 2.5rem;
+            border-radius: 30px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .order-btn:hover {
+            background: #2d5016;
+            transform: translateY(-3px);
+        }
+
+        /* Order Section */
+        .order-section {
+            padding: 5rem 0;
+            background: #fff;
+        }
+
+        .order-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2.5rem;
+            background: #f8f9fa;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Quantity Counter */
+        .quantity-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .qty-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #48a14d;
+            background: white;
+            color: #48a14d;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qty-btn:hover {
+            background: #48a14d;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .qty-display {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d5016;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        /* Tea Cup Animation for Submit Button */
+        .submit-btn {
+            background: #48a14d;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 30px;
+            border: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            background: #2d5016;
+            transform: translateY(-3px);
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .tea-cup-icon {
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .submit-btn.pouring .tea-cup-icon {
+            animation: pourTea 1.5s ease-in-out;
+        }
+
+        @keyframes pourTea {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            30% {
+                transform: rotate(-25deg) translateY(-5px);
+            }
+
+            60% {
+                transform: rotate(-25deg) translateY(-5px);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .form-control,
+        .form-select {
+            padding: 0.8rem;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #48a14d;
+            box-shadow: 0 0 0 0.2rem rgba(72, 161, 77, 0.25);
+        }
+
+        /* Footer - Fixed */
+        .footer {
+            background: linear-gradient(135deg, #1a3a0f 0%, #2d5016 100%);
+            color: white;
+            padding: 4rem 0 1rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo i {
+            color: #ffd700;
+        }
+
+        .footer p {
+            opacity: 0.9;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-links h5 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #ffd700;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links ul li a:hover {
+            color: #ffd700;
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            background: #ffd700;
+            color: #1a3a0f;
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: #25d366;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128c7e;
+        }
+
+        /* Floating WhatsApp Button */
+        .facebook-float {
+            position: fixed;
+            bottom: 160px;
+            right: 30px;
+            background: #007cf0;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .facebook-float:hover {
+            transform: scale(1.1);
+            background: #128c7e;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #48a14d;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .scroll-top:hover {
+            background: #2d5016;
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design - Complete Mobile Support */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-container {
+                flex-direction: column;
+                gap: 60px;
+                text-align: center;
+            }
+
+            .hero-features {
+                justify-content: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .showcase-container {
+                max-width: 500px;
+                margin: 0 auto;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 100px 0 60px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .hero-tag {
+                font-size: 0.8rem;
+                padding: 8px 20px;
+            }
+
+            .hero-features {
+                gap: 15px;
+            }
+
+            .feature-item {
+                padding: 12px 20px;
+            }
+
+            .feature-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            .feature-text {
+                font-size: 0.9rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cta-btn,
+            .secondary-btn {
+                width: 100%;
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+
+            .showcase-container {
+                height: 400px;
+            }
+
+            .product-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .product-title {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .package-price {
+                font-size: 2.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .showcase-container {
+                height: 350px;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            .package-card {
+                min-height: 400px;
+            }
+
+            .package-price {
+                font-size: 2rem;
+            }
+
+            .whatsapp-float {
+                bottom: 80px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .scroll-top {
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">BD HARBS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">হোম</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">আমাদের সম্পর্কে</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#packages">প্যাকেজ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#order">অর্ডার করুন</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container hero-container">
+            <!-- Text Content -->
+            <div class="hero-content">
+                <div class="hero-tag">প্রিমিয়াম এডিশন</div>
+                <h1>
+                    <span>স্বাস্থ্যকর</span>
+                    জীবনের জন্য প্রাকৃতিক <span>রোজেলা</span> টি
+                </h1>
+                <p class="hero-description">
+                    ১০০% প্রাকৃতিক হিবিস্কাস ফুল থেকে তৈরি বিশেষ হারবাল টি।
+                    প্রতিদিন এক কাপ রোজেলা টি আপনাকে দেবে সুস্থতা, সৌন্দর্য ও সতেজতা।
+                </p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                        <div class="feature-text">১০০% প্রাকৃতিক</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-heartbeat"></i></div>
+                        <div class="feature-text">রক্তচাপ নিয়ন্ত্রণ</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-weight"></i></div>
+                        <div class="feature-text">ওজন কমায়</div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="cta-btn"
+                        onclick="document.getElementById('order').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-shopping-cart"></i> এখনই অর্ডার করুন
+                    </button>
+                    <button class="secondary-btn"
+                        onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-info-circle"></i> বিস্তারিত জানুন
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Showcase -->
+            <div class="product-showcase">
+                <div class="showcase-container">
+                    <div class="product-card" id="productCard">
+                        <div class="product-front">
+                            <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&h=400&fit=crop"
+                                alt="Hibiscus Tea" class="product-image">
+                            <h3 class="product-title">প্রিমিয়াম হিবিস্কাস টি</h3>
+                            <p class="product-subtitle">১০০% অর্গানিক ও প্রাকৃতিক</p>
+                            <button class="flip-btn" onclick="flipCard()">
+                                <i class="fas fa-sync-alt"></i> উপকারিতা দেখুন
+                            </button>
+                        </div>
+                        <div class="product-back">
+                            <h3>সুবিধা সমূহ</h3>
+                            <ul class="benefits-list">
+                                <li><i class="fas fa-check-circle"></i> রক্তচাপ নিয়ন্ত্রণ করে</li>
+                                <li><i class="fas fa-check-circle"></i> ওজন কমাতে সাহায্য করে</li>
+                                <li><i class="fas fa-check-circle"></i> হজম শক্তি বৃদ্ধি করে</li>
+                                <li><i class="fas fa-check-circle"></i> অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ</li>
+                                <li><i class="fas fa-check-circle"></i> রোগ প্রতিরোধ ক্ষমতা বাড়ায়</li>
+                            </ul>
+                            <button class="flip-btn" onclick="flipCard()">
+                                <i class="fas fa-sync-alt"></i> পণ্য দেখুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-controls">
+                    <button class="control-btn" onclick="showPrevProduct()"><i class="fas fa-chevron-left"></i></button>
+                    <button class="control-btn" onclick="showNextProduct()"><i
+                            class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section - NEW -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">রোজেলা চায়ের উপকারিতা</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 2rem;">
+                প্রকৃতির অমূল্য উপহার রোজেলা চা - স্বাস্থ্যের জন্য অসংখ্য উপকার
+            </p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-heart"></i></div>
+                    <h3 class="benefit-title">হার্ট সুস্থ রাখে</h3>
+                    <p class="benefit-description">
+                        কোলেস্টেরল নিয়ন্ত্রণে রাখে এবং হৃদরোগের ঝুঁকি কমায়। প্রতিদিন এক কাপ রোজেলা চা আপনার হার্ট ভাল
+                        রাখে।
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-stethoscope"></i></div>
+                    <h3 class="benefit-title">রক্তচাপ নিয়ন্ত্রণ</h3>
+                    <p class="benefit-description">
+                        উচ্চ রক্তচাপ নিয়ন্ত্রণে রাখতে বিশেষভাবে কার্যকর। নিয়মিত সেবনে রক্তচাপ স্বাভাবিক থাকে।
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-weight"></i></div>
+                    <h3 class="benefit-title">ওজন নিয়ন্ত্রণ</h3>
+                    <p class="benefit-description">
+                        মেটাবলিজম বাড়িয়ে ওজন কমাতে সাহায্য করে। ডায়েট চার্টের জন্য আদর্শ পানীয়।
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-atom"></i></div>
+                    <h3 class="benefit-title">এনার্জি বুস্টার</h3>
+                    <p class="benefit-description">
+                        প্রাকৃতিক উপায়ে শক্তি বাড়ায় এবং ক্লান্তি দূর করে। সারাদিন সতেজ থাকার উপায়।
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="benefit-title">রোগ প্রতিরোধ</h3>
+                    <p class="benefit-description">
+                        অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ যা রোগ প্রতিরোধ ক্ষমতা বাড়ায় এবং ভাইরাস থেকে রক্ষা করে।
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-spa"></i></div>
+                    <h3 class="benefit-title">ত্বক উজ্জ্বল করে</h3>
+                    <p class="benefit-description">
+                        ভিটামিন সি সমৃদ্ধ যা ত্বকের সৌন্দর্য বৃদ্ধি করে এবং ত্বককে উজ্জ্বল ও সতেজ রাখে।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">আমাদের সম্পর্কে</h2>
+            <div class="row about-content">
+                <div class="col-md-6">
+                    <h3 style="color: #2d5016; font-weight: 600; margin-bottom: 1.5rem;">কেন হিবিস্কাস টি?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">হিবিস্কাস হারবাল টি একটি সম্পূর্ণ প্রাকৃতিক পানীয়
+                        যা আপনার স্বাস্থ্যের জন্য অত্যন্ত উপকারী। এটি রক্তচাপ নিয়ন্ত্রণ, ওজন কমাতে এবং হজম শক্তি
+                        বৃদ্ধিতে সাহায্য করে।</p>
+                    <ul style="font-size: 1.1rem; line-height: 2;">
+                        <li> রক্তচাপ নিয়ন্ত্রণে সহায়ক</li>
+                        <li> ওজন কমাতে কার্যকর</li>
+                        <li> হজম শক্তি বৃদ্ধি করে</li>
+                        <li> অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ</li>
+                        <li> ১০০% প্রাকৃতিক উপাদান</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div id="feedbackCarousel" class="carousel slide feedback-carousel" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/customer-review/Customar-Review-01.PNG" class="d-block w-100"
+                                    alt="Customer 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-02.PNG" class="d-block w-100"
+                                    alt="Customer 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-03.PNG" class="d-block w-100"
+                                    alt="Customer 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-03.PNG" class="d-block w-100"
+                                    alt="Customer 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-04.PNG" class="d-block w-100"
+                                    alt="Customer 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-05.PNG" class="d-block w-100"
+                                    alt="Customer 5">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-06.PNG" class="d-block w-100"
+                                    alt="Customer 6">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-07.PNG" class="d-block w-100"
+                                    alt="Customer 7">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-08.JPG" class="d-block w-100"
+                                    alt="Customer 8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages-section">
+        <div class="container">
+            <h2 class="section-title">আমাদের প্যাকেজ সমূহ</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="package-card">
+                        <h3 class="package-title">রেগুলার প্যাক</h3>
+                        <div class="package-price">৫৯৯ টাকা</div>
+                        <ul style="font-size: 1.1rem; line-height: 2; margin-bottom: 2rem; list-style: none;">
+                            <li>✓ ১০০% প্রাকৃতিক রোজেলা</li>
+                            <li>✓ প্রিমিয়াম কোয়ালিটি</li>
+                            <li>✓ সতেজ ও সুগন্ধি</li>
+                            <li>✓ ক্যাশ অন ডেলিভারি</li>
+                        </ul>
+                        <button class="order-btn"
+                            onclick="document.getElementById('order').scrollIntoView({behavior: 'smooth'}); document.getElementById('package').value='Regular Pack - 499 টাকা';">অর্ডার
+                            করুন</button>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="package-card popular">
+                        <span class="popular-badge">জনপ্রিয়</span>
+                        <h3 class="package-title">প্রিমিয়াম প্যাক</h3>
+                        <div class="package-price">৮৯৯ টাকা</div>
+                        <ul style="font-size: 1.1rem; line-height: 2; margin-bottom: 2rem; list-style: none;">
+                            <li>✓ ২০০% প্রাকৃতিক রোজেলা</li>
+                            <li>✓ প্রিমিয়াম কোয়ালিটি</li>
+                            <li>✓ সতেজ ও সুগন্ধি</li>
+                            <li>✓ ক্যাশ অন ডেলিভারি</li>
+                            <li>✓ বেশি সাশ্রয়ী</li>
+                        </ul>
+                        <button class="order-btn"
+                            onclick="document.getElementById('order').scrollIntoView({behavior: 'smooth'}); document.getElementById('package').value='Premium Pack - 699 টাকা';">অর্ডার
+                            করুন</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="order-section">
+        <div class="container">
+            <h2 class="section-title">অর্ডার করুন</h2>
+            <form class="order-form" id="orderForm">
+                <input type="text" class="form-control" id="name" placeholder="আপনার নাম *" required>
+                <input type="tel" class="form-control" id="phone" placeholder="মোবাইল নম্বর *" required
+                    pattern="[0-9]{11}">
+                <textarea class="form-control" id="address" rows="3" placeholder="সম্পূর্ণ ঠিকানা *"
+                    required></textarea>
+                <select class="form-select" id="package" required>
+                    <option value="">প্যাকেজ নির্বাচন করুন *</option>
+                    <option value="Regular Pack - 499 টাকা">Regular Pack - 499 টাকা</option>
+                    <option value="Premium Pack - 699 টাকা">Premium Pack - 699 টাকা</option>
+                </select>
+
+                <!-- Quantity Selector with Plus/Minus -->
+                <label style="font-weight: 600; margin-bottom: 10px; display: block;">পরিমাণ নির্বাচন করুন</label>
+                <div class="quantity-wrapper">
+                    <button type="button" class="qty-btn" onclick="decreaseQty()"><i class="fas fa-minus"></i></button>
+                    <div class="qty-display" id="qtyDisplay">1</div>
+                    <button type="button" class="qty-btn" onclick="increaseQty()"><i class="fas fa-plus"></i></button>
+                </div>
+                <input type="hidden" id="quantity" value="1">
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="tea-cup-icon">☕</span>
+                    অর্ডার সম্পন্ন করুন
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i> BD HARBS
+                    </div>
+                    <p>১০০% প্রাকৃতিক হিবিস্কাস ফুল থেকে তৈরি বিশেষ হারবাল টি। প্রতিদিন এক কাপ রোজেলা টি আপনাকে দেবে
+                        সুস্থতা, সৌন্দর্য ও সতেজতা।</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5 mb-lg-0">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="#home">হোম</a></li>
+                            <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                            <li><a href="#gallery">প্যাকেজ</a></li>
+                            <li><a href="#order">অর্ডার করুন</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <div class="footer-links">
+                        <h5>Our Products</h5>
+                        <ul>
+                            <li><a href="#">Hibiscus Tea</a></li>
+                            <li><a href="#">Tea Sampler Pack</a></li>
+                            <li><a href="#">Organic Herbal Tea</a></li>
+                            <li><a href="#">Gift Sets</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Dhaka, Bangladesh</li>
+                            <li><i class="fas fa-phone me-2"></i> +880 1316-981765</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Rosella Tea. All rights reserved. | Designed with <i class="fas fa-heart"
+                        style="color: #ff6b6b;"></i> for tea lovers</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Floating facebook -->
+    <a href="https://wa.me/8801316981765" class="facebook-float" target="_blank">
+        <i class="fab fa-facebook"></i>
+    </a>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/8801316981765" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Product Card Flip
+        let isFlipped = false;
+
+        function flipCard() {
+            const card = document.getElementById('productCard');
+            isFlipped = !isFlipped;
+            if (isFlipped) {
+                card.classList.add('flipped');
+            } else {
+                card.classList.remove('flipped');
+            }
+        }
+
+        // Product Rotation
+        const products = [
+            {
+                front: {
+                    image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&h=400&fit=crop",
+                    title: "প্রিমিয়াম হিবিস্কাস টি",
+                    subtitle: "১০০% অর্গানিক ও প্রাকৃতিক"
+                },
+                back: {
+                    benefits: [
+                        "রক্তচাপ নিয়ন্ত্রণ করে",
+                        "ওজন কমাতে সাহায্য করে",
+                        "হজম শক্তি বৃদ্ধি করে",
+                        "অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ",
+                        "রোগ প্রতিরোধ ক্ষমতা বাড়ায়"
+                    ]
+                }
+            },
+            {
+                front: {
+                    image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=400&fit=crop",
+                    title: "স্পেশাল রোজেলা টি",
+                    subtitle: "বিশেষ ভেষজ উপাদান যুক্ত"
+                },
+                back: {
+                    benefits: [
+                        "ডায়াবেটিস নিয়ন্ত্রণে সাহায্য করে",
+                        "কোলেস্টেরল কমায়",
+                        "লিভার সুস্থ রাখে",
+                        "ত্বকের সৌন্দর্য বাড়ায়",
+                        "এনার্জি বাড়ায়"
+                    ]
+                }
+            }
+        ];
+
+        let currentProductIndex = 0;
+
+        function updateProduct() {
+            const product = products[currentProductIndex];
+            const card = document.getElementById('productCard');
+
+            // Reset flip
+            isFlipped = false;
+            card.classList.remove('flipped');
+
+            // Update content
+            const img = card.querySelector('.product-image');
+            const title = card.querySelector('.product-title');
+            const subtitle = card.querySelector('.product-subtitle');
+            const benefitsList = card.querySelector('.benefits-list');
+
+            img.src = product.front.image;
+            title.textContent = product.front.title;
+            subtitle.textContent = product.front.subtitle;
+
+            benefitsList.innerHTML = '';
+            product.back.benefits.forEach(benefit => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fas fa-check-circle"></i> ${benefit}`;
+                benefitsList.appendChild(li);
+            });
+        }
+
+        function showNextProduct() {
+            currentProductIndex = (currentProductIndex + 1) % products.length;
+            updateProduct();
+        }
+
+        function showPrevProduct() {
+            currentProductIndex = (currentProductIndex - 1 + products.length) % products.length;
+            updateProduct();
+        }
+
+        // Quantity Controls
+        let quantity = 1;
+
+        function increaseQty() {
+            if (quantity < 99) {
+                quantity++;
+                updateQtyDisplay();
+            }
+        }
+
+        function decreaseQty() {
+            if (quantity > 1) {
+                quantity--;
+                updateQtyDisplay();
+            }
+        }
+
+        function updateQtyDisplay() {
+            document.getElementById('qtyDisplay').textContent = quantity;
+            document.getElementById('quantity').value = quantity;
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Scroll Animation
+        window.addEventListener('scroll', () => {
+            const aboutContent = document.querySelector('.about-content');
+            const scrollTop = document.getElementById('scrollTop');
+
+            if (aboutContent && aboutContent.getBoundingClientRect().top < window.innerHeight - 100) {
+                aboutContent.classList.add('fade-in');
+            }
+
+            if (window.pageYOffset > 300) {
+                scrollTop.style.display = 'flex';
+            } else {
+                scrollTop.style.display = 'none';
+            }
+        });
+
+        // Scroll to Top
+        document.getElementById('scrollTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Form Submission with SweetAlert
+        document.getElementById('orderForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                package: document.getElementById('package').value,
+                quantity: document.getElementById('quantity').value,
+                timestamp: new Date().toLocaleString('bn-BD')
+            };
+
+            // Validate phone
+            const phonePattern = /^01[3-9]\d{8}$/;
+            if (!phonePattern.test(formData.phone)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'ভুল নম্বর',
+                    text: 'দয়া করে সঠিক মোবাইল নম্বর দিন (11 ডিজিট, 01 দিয়ে শুরু)'
+                });
+                return;
+            }
+
+            // Disable button and add animation
+            submitBtn.disabled = true;
+            submitBtn.classList.add('pouring');
+
+            // Simulate API call (Replace with actual Google Apps Script URL)
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('pouring');
+
+                // Show success with tea pouring animation
+                Swal.fire({
+                    title: 'অর্ডার সফল!',
+                    html: '<div style="font-size: 80px; animation: pour 1s ease-in-out;">☕</div><p>আপনার অর্ডারটি সফলভাবে সম্পন্ন হয়েছে!</p><p>শীঘ্রই আমরা আপনার সাথে যোগাযোগ করব।</p>',
+                    icon: 'success',
+                    confirmButtonText: 'ধন্যবাদ',
+                    confirmButtonColor: '#48a14d'
+                });
+
+                // Reset form
+                document.getElementById('orderForm').reset();
+                quantity = 1;
+                updateQtyDisplay();
+
+                console.log('Order Data:', formData);
+            }, 2000);
+
+            /* 
+            ============================================
+            GOOGLE SHEETS INTEGRATION
+            ============================================
+            For actual Google Sheets integration, replace the setTimeout above with:
+
+              */
+
+            try {
+                const response = await fetch(
+                    "https://script.google.com/macros/s/AKfycbxP4kVyg7cJHD-whSGawWw9uTSK8VBCyQtFOfPEy-pmJxxXmEirUgm8p8MzncstNL-IUw/exec",
+                    {
+                        method: "POST",
+                        mode: "no-cors",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(formData),
+                    }
+                );
+
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('pouring');
+
+                Swal.fire({
+                    title: 'অর্ডার সফল!',
+                    html: '<div style="font-size: 80px; animation: pour 1s ease-in-out;">☕</div><p>আপনার অর্ডারটি সফলভাবে সম্পন্ন হয়েছে!</p>',
+                    icon: 'success',
+                    confirmButtonText: 'ধন্যবাদ',
+                    confirmButtonColor: '#48a14d'
+                });
+
+                document.getElementById('orderForm').reset();
+                quantity = 1;
+                updateQtyDisplay();
+
+            } catch (error) {
+                console.error('Error:', error);
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('pouring');
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'সমস্যা হয়েছে',
+                    text: 'অর্ডার করতে সমস্যা হয়েছে। আবার চেষ্টা করুন।'
+                });
+            }
+
+        });
+
+        // Add CSS for pour animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pour {
+                0% { transform: rotate(0deg); }
+                30% { transform: rotate(-25deg) translateY(-10px); }
+                60% { transform: rotate(-25deg) translateY(-10px); }
+                100% { transform: rotate(0deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>

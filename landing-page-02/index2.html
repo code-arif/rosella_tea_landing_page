@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="হিবিস্কাস হারবাল টি - প্রাকৃতিক ও স্বাস্থ্যকর চায়ের জন্য আপনার নির্ভরযোগ্য পছন্দ">
+    <title>Hibiscus Herbal Tea - স্বাস্থ্যকর জীবনের সাথী</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">🌺 Hibiscus Tea</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">হোম</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">আমাদের সম্পর্কে</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#packages">প্যাকেজ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#order">অর্ডার করুন</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container hero-container">
+            <!-- Text Content -->
+            <div class="hero-content">
+                <div class="hero-tag">প্রিমিয়াম এডিশন</div>
+                <h1>
+                    <span>স্বাস্থ্যকর</span>
+                    জীবনের জন্য প্রাকৃতিক <span>রোজেলা</span> টি
+                </h1>
+                <p class="hero-description">
+                    ১০০% প্রাকৃতিক হিবিস্কাস ফুল থেকে তৈরি বিশেষ হারবাল টি।
+                    প্রতিদিন এক কাপ রোজেলা টি আপনাকে দেবে সুস্থতা, সৌন্দর্য ও সতেজতা।
+                </p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                        <div class="feature-text">১০০% প্রাকৃতিক</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-heartbeat"></i></div>
+                        <div class="feature-text">রক্তচাপ নিয়ন্ত্রণ</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-weight"></i></div>
+                        <div class="feature-text">ওজন কমায়</div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="cta-btn"
+                        onclick="document.getElementById('order').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-shopping-cart"></i> এখনই অর্ডার করুন
+                    </button>
+                    <button class="secondary-btn"
+                        onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-info-circle"></i> বিস্তারিত জানুন
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Showcase -->
+            <div class="product-showcase">
+                <div class="showcase-container">
+                    <div class="product-card" id="productCard">
+                        <div class="product-front">
+                            <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&h=400&fit=crop"
+                                alt="Hibiscus Tea" class="product-image">
+                            <h3 class="product-title">প্রিমিয়াম হিবিস্কাস টি</h3>
+                            <p class="product-subtitle">১০০% অর্গানিক ও প্রাকৃতিক</p>
+                            <button class="flip-btn" onclick="flipCard()">
+                                <i class="fas fa-sync-alt"></i> উপকারিতা দেখুন
+                            </button>
+                        </div>
+                        <div class="product-back">
+                            <h3>সুবিধা সমূহ</h3>
+                            <ul class="benefits-list">
+                                <li><i class="fas fa-check-circle"></i> রক্তচাপ নিয়ন্ত্রণ করে</li>
+                                <li><i class="fas fa-check-circle"></i> ওজন কমাতে সাহায্য করে</li>
+                                <li><i class="fas fa-check-circle"></i> হজম শক্তি বৃদ্ধি করে</li>
+                                <li><i class="fas fa-check-circle"></i> অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ</li>
+                                <li><i class="fas fa-check-circle"></i> রোগ প্রতিরোধ ক্ষমতা বাড়ায়</li>
+                            </ul>
+                            <button class="flip-btn" onclick="flipCard()">
+                                <i class="fas fa-sync-alt"></i> পণ্য দেখুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-controls">
+                    <button class="control-btn" onclick="showPrevProduct()"><i class="fas fa-chevron-left"></i></button>
+                    <button class="control-btn" onclick="showNextProduct()"><i
+                            class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section - NEW -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">রোজেলা চায়ের উপকারিতা</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 2rem;">
+                প্রকৃতির অমূল্য উপহার রোজেলা চা - স্বাস্থ্যের জন্য অসংখ্য উপকার
+            </p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-heart"></i></div>
+                    <h3 class="benefit-title">হার্ট সুস্থ রাখে</h3>
+                    <p class="benefit-description">
+                        কোলেস্টেরল নিয়ন্ত্রণে রাখে এবং হৃদরোগের ঝুঁকি কমায়। প্রতিদিন এক কাপ রোজেলা চা আপনার হার্ট ভাল
+                        রাখে।
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-stethoscope"></i></div>
+                    <h3 class="benefit-title">রক্তচাপ নিয়ন্ত্রণ</h3>
+                    <p class="benefit-description">
+                        উচ্চ রক্তচাপ নিয়ন্ত্রণে রাখতে বিশেষভাবে কার্যকর। নিয়মিত সেবনে রক্তচাপ স্বাভাবিক থাকে।
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-weight"></i></div>
+                    <h3 class="benefit-title">ওজন নিয়ন্ত্রণ</h3>
+                    <p class="benefit-description">
+                        মেটাবলিজম বাড়িয়ে ওজন কমাতে সাহায্য করে। ডায়েট চার্টের জন্য আদর্শ পানীয়।
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-atom"></i></div>
+                    <h3 class="benefit-title">এনার্জি বুস্টার</h3>
+                    <p class="benefit-description">
+                        প্রাকৃতিক উপায়ে শক্তি বাড়ায় এবং ক্লান্তি দূর করে। সারাদিন সতেজ থাকার উপায়।
+                    </p>
+                </div>
+                <!-- <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="benefit-title">রোগ প্রতিরোধ</h3>
+                    <p class="benefit-description">
+                        অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ যা রোগ প্রতিরোধ ক্ষমতা বাড়ায় এবং ভাইরাস থেকে রক্ষা করে।
+                    </p>
+                </div> -->
+                <!-- <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-spa"></i></div>
+                    <h3 class="benefit-title">ত্বক উজ্জ্বল করে</h3>
+                    <p class="benefit-description">
+                        ভিটামিন সি সমৃদ্ধ যা ত্বকের সৌন্দর্য বৃদ্ধি করে এবং ত্বককে উজ্জ্বল ও সতেজ রাখে।
+                    </p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">আমাদের সম্পর্কে</h2>
+            <div class="row about-content">
+                <div class="col-md-6">
+                    <h3 style="color: #2d5016; font-weight: 600; margin-bottom: 1.5rem;">কেন হিবিস্কাস টি?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">হিবিস্কাস হারবাল টি একটি সম্পূর্ণ প্রাকৃতিক পানীয়
+                        যা আপনার স্বাস্থ্যের জন্য অত্যন্ত উপকারী। এটি রক্তচাপ নিয়ন্ত্রণ, ওজন কমাতে এবং হজম শক্তি
+                        বৃদ্ধিতে সাহায্য করে।</p>
+                    <ul style="font-size: 1.1rem; line-height: 2;">
+                        <li> রক্তচাপ নিয়ন্ত্রণে সহায়ক</li>
+                        <li> ওজন কমাতে কার্যকর</li>
+                        <li> হজম শক্তি বৃদ্ধি করে</li>
+                        <li> অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ</li>
+                        <li> ১০০% প্রাকৃতিক উপাদান</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div id="feedbackCarousel" class="carousel slide feedback-carousel" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/customer-review/Customar-Review-01.PNG" class="d-block w-100"
+                                    alt="Customer 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-02.PNG" class="d-block w-100"
+                                    alt="Customer 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-03.PNG" class="d-block w-100"
+                                    alt="Customer 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-03.PNG" class="d-block w-100"
+                                    alt="Customer 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-04.PNG" class="d-block w-100"
+                                    alt="Customer 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-05.PNG" class="d-block w-100"
+                                    alt="Customer 5">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-06.PNG" class="d-block w-100"
+                                    alt="Customer 6">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-07.PNG" class="d-block w-100"
+                                    alt="Customer 7">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/customer-review/Customar-Review-08.JPG" class="d-block w-100"
+                                    alt="Customer 8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages-section">
+        <div class="container">
+            <h2 class="section-title">আমাদের প্যাকেজ সমূহ</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="package-card">
+                        <h3 class="package-title">রেগুলার প্যাক</h3>
+                        <div class="package-price">৫৯৯ টাকা</div>
+                        <ul style="font-size: 1.1rem; line-height: 2; margin-bottom: 2rem; list-style: none;">
+                            <li>✓ ১০০% প্রাকৃতিক রোজেলা</li>
+                            <li>✓ প্রিমিয়াম কোয়ালিটি</li>
+                            <li>✓ সতেজ ও সুগন্ধি</li>
+                            <li>✓ ক্যাশ অন ডেলিভারি</li>
+                        </ul>
+                        <button class="order-btn"
+                            onclick="document.getElementById('order').scrollIntoView({behavior: 'smooth'}); document.getElementById('package').value='Regular Pack - 499 টাকা';">অর্ডার
+                            করুন</button>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="package-card popular">
+                        <span class="popular-badge">জনপ্রিয়</span>
+                        <h3 class="package-title">প্রিমিয়াম প্যাক</h3>
+                        <div class="package-price">৮৯৯ টাকা</div>
+                        <ul style="font-size: 1.1rem; line-height: 2; margin-bottom: 2rem; list-style: none;">
+                            <li>✓ ২০০% প্রাকৃতিক রোজেলা</li>
+                            <li>✓ প্রিমিয়াম কোয়ালিটি</li>
+                            <li>✓ সতেজ ও সুগন্ধি</li>
+                            <li>✓ ক্যাশ অন ডেলিভারি</li>
+                            <li>✓ বেশি সাশ্রয়ী</li>
+                        </ul>
+                        <button class="order-btn"
+                            onclick="document.getElementById('order').scrollIntoView({behavior: 'smooth'}); document.getElementById('package').value='Premium Pack - 699 টাকা';">অর্ডার
+                            করুন</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <!-- <section id="order" class="order-section">
+        <div class="container">
+            <h2 class="section-title">অর্ডার করুন</h2>
+            <form class="order-form" id="orderForm">
+                <input type="text" class="form-control" id="name" placeholder="আপনার নাম *" required>
+                <input type="tel" class="form-control" id="phone" placeholder="মোবাইল নম্বর *" required
+                    pattern="[0-9]{11}">
+                <textarea class="form-control" id="address" rows="3" placeholder="সম্পূর্ণ ঠিকানা *"
+                    required></textarea>
+                <select class="form-select" id="package" required>
+                    <option value="">প্যাকেজ নির্বাচন করুন *</option>
+                    <option value="Regular Pack - 499 টাকা">Regular Pack - 499 টাকা</option>
+                    <option value="Premium Pack - 699 টাকা">Premium Pack - 699 টাকা</option>
+                </select>
+                <input type="number" class="form-control" id="quantity" placeholder="পরিমাণ *" min="1" value="1"
+                    required>
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    অর্ডার সম্পন্ন করুন
+                    <span class="spinner spinner-border spinner-border-sm"></span>
+                </button>
+                <div class="success-message" id="successMessage">
+                    ✅ আপনার অর্ডারটি সফলভাবে সম্পন্ন হয়েছে! শীঘ্রই আমরা আপনার সাথে যোগাযোগ করব।
+                </div>
+            </form>
+        </div>
+    </section> -->
+
+    <section id="order" class="order-section">
+        <div class="container">
+            <h2 class="section-title">অর্ডার করুন</h2>
+            <form class="order-form" id="orderForm">
+                <input type="text" class="form-control" id="name" placeholder="আপনার নাম *" required>
+                <input type="tel" class="form-control" id="phone" placeholder="মোবাইল নম্বর *" required
+                    pattern="[0-9]{11}">
+                <textarea class="form-control" id="address" rows="3" placeholder="সম্পূর্ণ ঠিকানা *"
+                    required></textarea>
+                <select class="form-select" id="package" required>
+                    <option value="">প্যাকেজ নির্বাচন করুন *</option>
+                    <option value="Regular Pack - 499 টাকা">Regular Pack - 499 টাকা</option>
+                    <option value="Premium Pack - 699 টাকা">Premium Pack - 699 টাকা</option>
+                </select>
+
+                <!-- Quantity Selector with Plus/Minus -->
+                <label style="font-weight: 600; margin-bottom: 10px; display: block;">পরিমাণ নির্বাচন করুন</label>
+                <div class="quantity-wrapper">
+                    <button type="button" class="qty-btn" onclick="decreaseQty()"><i class="fas fa-minus"></i></button>
+                    <div class="qty-display" id="qtyDisplay">1</div>
+                    <button type="button" class="qty-btn" onclick="increaseQty()"><i class="fas fa-plus"></i></button>
+                </div>
+                <input type="hidden" id="quantity" value="1">
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="tea-cup-icon">☕</span>
+                    অর্ডার সম্পন্ন করুন
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- <footer id="contact">
+        <div class="container text-center">
+            <div class="footer-title">🌺 Hibiscus Herbal Tea</div>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">স্বাস্থ্যকর জীবনের জন্য প্রাকৃতিক সমাধান</p>
+            <div style="margin-bottom: 1.5rem;">
+                <p><i class="fas fa-phone"></i> +880 1234-567890</p>
+                <p><i class="fas fa-envelope"></i> info@hibiscustea.com</p>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <hr style="margin: 2rem 0; border-color: rgba(255,255,255,0.2);">
+            <p style="margin: 0;">&copy; 2024 Hibiscus Herbal Tea. All Rights Reserved.</p>
+        </div>
+    </footer> -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i> Rosella Tea
+                    </div>
+                    <p>Experience the refreshing taste and health benefits of premium hibiscus tea. Sourced from organic
+                        farms and delivered to your doorstep.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5 mb-lg-0">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#order">Order Now</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <div class="footer-links">
+                        <h5>Our Products</h5>
+                        <ul>
+                            <li><a href="#">Hibiscus Tea</a></li>
+                            <li><a href="#">Tea Sampler Pack</a></li>
+                            <li><a href="#">Organic Herbal Tea</a></li>
+                            <li><a href="#">Gift Sets</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Dhaka, Bangladesh</li>
+                            <li><i class="fas fa-phone me-2"></i> +880 1234 567890</li>
+                            <li><i class="fas fa-envelope me-2"></i> rufuzxyz@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Rosella Tea. All rights reserved. | Designed with <i class="fas fa-heart"
+                        style="color: #ff6b6b;"></i> for tea lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/8801234567890" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="scrpt.js"></script>
+</body>
+
+</html>
